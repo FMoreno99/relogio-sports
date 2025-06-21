@@ -131,7 +131,7 @@ h1, h2 {
     border-radius: 5px;
     text-align: center;
     margin-left: 5px; /* Mantido um leve espaçamento dentro do wrapper */
-    -moz-appearance: textfield;
+   
 }
 
 #addition-time::-webkit-outer-spin-button,
