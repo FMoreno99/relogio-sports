@@ -1,0 +1,321 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    margin: 0;
+    color: #333;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+}
+
+/* Garante que todos os títulos sejam escondidos se aparecerem */
+h1, h2 {
+    display: none !important;
+}
+
+.competitions-grid, .model-options, .controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Estilo base para todos os botões principais de navegação e controle */
+.competition-btn, .model-btn, .control-btn, .back-btn {
+    padding: 12px 25px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+    flex: 1 1 auto;
+    max-width: 250px;
+    min-width: 150px;
+}
+
+/* Cores específicas para botões de competição e modelo (padrão) */
+.competition-btn, .model-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.competition-btn:hover, .model-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Estilos padrão para os botões de controle (serão sobrescritos pelas classes de competição) */
+#start-btn { background-color: #28a745; color: white; }
+#start-btn:hover { background-color: #218838; }
+
+#pause-btn { background-color: #ffc107; color: #333; }
+#pause-btn:hover { background-color: #e0a800; }
+
+#reset-btn { background-color: #dc3545; color: white; }
+#reset-btn:hover { background-color: #c82333; }
+
+#half-time-btn, #end-match-btn, #start-second-half-btn {
+    background-color: #6c757d; color: white;
+}
+#half-time-btn:hover, #end-match-btn:hover, #start-second-half-btn:hover {
+    background-color: #5a6268;
+}
+
+#start-extra-time-btn, #end-extra-time-btn {
+    background-color: #17a2b8; color: white;
+}
+#start-extra-time-btn:hover, #end-extra-time-btn:hover {
+    background-color: #138496;
+}
+
+.back-btn {
+    background-color: #6c757d;
+    color: white;
+    margin-top: 20px;
+}
+.back-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Estilo do display do relógio padrão (para outros temas) */
+.clock-display {
+    font-size: 5em;
+    font-weight: bold;
+    margin: 40px auto;
+    color: #34495e;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    width: fit-content;
+}
+
+.clock-display span {
+    display: inline-block;
+    min-width: 80px;
+}
+
+/* Estilo para o wrapper de acréscimos (dentro do clock-display) */
+.addition-input-wrapper {
+    font-size: 0.4em;
+    font-weight: normal;
+    margin-left: 10px;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 10px;
+    color: inherit;
+}
+
+#addition-time {
+    width: 60px;
+    padding: 5px;
+    font-size: 1em;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 5px;
+    -moz-appearance: textfield;
+}
+
+#addition-time::-webkit-outer-spin-button,
+#addition-time::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- Personalização por Competição --- */
+
+/* Champions League */
+.comp-champions {
+    background-color: #000;
+    color: white;
+}
+.comp-champions .container { background-color: #2c2c2c; }
+.comp-champions .clock-display { color: #fff; }
+.comp-champions .control-btn, .comp-champions .back-btn { background-color: #f7d54e; color: #2c2c2c; font-weight: bold; }
+.comp-champions .control-btn:hover, .comp-champions .back-btn:hover { background-color: #e0be3a; }
+.comp-champions .addition-input-wrapper { color: white; }
+.comp-champions .addition-input-wrapper input { background-color: #444; color: #f7d54e; border-color: #f7d54e; }
+
+/* Libertadores */
+.comp-libertadores {
+    background-image: linear-gradient(to right, #4c0000, #800000);
+    color: #eee;
+}
+.comp-libertadores .container { background-color: #600000; }
+.comp-libertadores .clock-display { color: #fff; }
+.comp-libertadores .control-btn, .comp-libertadores .back-btn { background-color: #ffd700; color: #4c0000; font-weight: bold; }
+.comp-libertadores .control-btn:hover, .comp-libertadores .back-btn:hover { background-color: #e6c200; }
+.comp-libertadores .addition-input-wrapper { color: #eee; }
+.comp-libertadores .addition-input-wrapper input { background-color: #5a0000; color: #ffd700; border-color: #ffd700; }
+
+/* Brasileirão */
+.comp-brasileirao {
+    background-image: linear-gradient(to bottom, #004d00, #008000);
+    color: #fff;
+}
+.comp-brasileirao .container { background-color: #006000; }
+.comp-brasileirao .clock-display { color: #fff; }
+.comp-brasileirao .control-btn, .comp-brasileirao .back-btn { background-color: #ffff00; color: #004d00; font-weight: bold; }
+.comp-brasileirao .control-btn:hover, .comp-brasileirao .back-btn:hover { background-color: #e6e600; }
+.comp-brasileirao .addition-input-wrapper { color: #fff; }
+.comp-brasileirao .addition-input-wrapper input { background-color: #005000; color: #ffff00; border-color: #ffff00; }
+
+/* Copa do Brasil */
+.comp-copa-brasil {
+    background-image: linear-gradient(to top, #333333, #666666);
+    color: #fff;
+}
+.comp-copa-brasil .container { background-color: #444444; }
+.comp-copa-brasil .clock-display { color: #fff; }
+.comp-copa-brasil .control-btn, .comp-copa-brasil .back-btn { background-color: #cccccc; color: #333; font-weight: bold; }
+.comp-copa-brasil .control-btn:hover, .comp-copa-brasil .back-btn:hover { background-color: #b3b3b3; }
+.comp-copa-brasil .addition-input-wrapper { color: #fff; }
+.comp-copa-brasil .addition-input-wrapper input { background-color: #555; color: #cccccc; border-color: #cccccc; }
+
+
+/* Copa do Mundo de Clubes - FOCO PRINCIPAL */
+.comp-mundial-clubes {
+    background-color: #333;
+    color: #fff;
+}
+
+.comp-mundial-clubes .container {
+    background-color: #d5a434;;
+    border: 1px solid #555;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* Esconde qualquer h1 ou h2 que possa surgir por engano */
+.comp-mundial-clubes h1,
+.comp-mundial-clubes h2 {
+    display: none !important;
+}
+
+/* --- ESTILOS ESPECÍFICOS DO CRONÔMETRO PARA O MUNDIAL --- */
+.comp-mundial-clubes .clock-display {
+    background-color: #d5a434; /* Fundo do cronômetro com a cor #d5a434 */
+    color: #000000; /* Texto do cronômetro preto */
+    font-family: 'Anton', sans-serif; /* Fonte Anton */
+    font-size: 3.5em;
+    font-weight: normal;
+    padding: 10px 25px; /* Aumentado um pouco o padding para destaque */
+    border-radius: 5px;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    text-shadow: none; /* Garante que não tenha brilho no texto */
+    height: fit-content;
+    margin-bottom: 40px;
+}
+
+/* Acréscimos dentro do cronômetro para o Mundial */
+.comp-mundial-clubes .addition-input-wrapper {
+    font-size: 0.4em;
+    font-weight: normal;
+    margin-left: 10px;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 5px;
+    color: #000000;
+}
+
+.comp-mundial-clubes .addition-input-wrapper input {
+    width: 60px;
+    padding: 5px;
+    font-size: 1em;
+    border: 1px solid #777;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 5px;
+    background-color: #d5a434;
+    color: #000000;
+    outline: none;
+}
+.comp-mundial-clubes .addition-input-wrapper input:focus {
+    border-color: #000000;
+}
+
+
+/* Botões de controle específicos para o tema Mundial de Clubes */
+.comp-mundial-clubes .control-btn,
+.comp-mundial-clubes .back-btn {
+    background-color: #d5a434;
+    color: #000000;
+    font-weight: bold;
+}
+
+.comp-mundial-clubes .control-btn:hover,
+.comp-mundial-clubes .back-btn:hover {
+    background-color: #c0942e;
+}
+
+/* Sobrescreve botões de ação específicos se houver necessidade de manter cores padrão para um botão específico */
+.comp-mundial-clubes #start-btn { background-color: #28a745; color: white; }
+.comp-mundial-clubes #start-btn:hover { background-color: #218838; }
+.comp-mundial-clubes #pause-btn { background-color: #ffc107; color: #333; }
+.comp-mundial-clubes #pause-btn:hover { background-color: #e0a800; }
+.comp-mundial-clubes #reset-btn { background-color: #dc3545; color: white; }
+.comp-mundial-clubes #reset-btn:hover { background-color: #c82333; }
+.comp-mundial-clubes #half-time-btn, .comp-mundial-clubes #end-match-btn, .comp-mundial-clubes #start-second-half-btn {
+    background-color: #6c757d; color: white;
+}
+.comp-mundial-clubes #half-time-btn:hover, .comp-mundial-clubes #end-match-btn:hover, .comp-mundial-clubes #start-second-half-btn:hover {
+    background-color: #5a6268;
+}
+.comp-mundial-clubes #start-extra-time-btn, .comp-mundial-clubes #end-extra-time-btn {
+    background-color: #17a2b8; color: white;
+}
+.comp-mundial-clubes #start-extra-time-btn:hover, .comp-mundial-clubes #end-extra-time-btn:hover {
+    background-color: #138496;
+}
+
+
+/* --- Responsividade para telas menores --- */
+@media (max-width: 768px) {
+    .competition-btn, .model-btn {
+        flex-basis: 100%;
+        max-width: none;
+    }
+    
+    /* Mundial de Clubes Responsivo */
+    .comp-mundial-clubes .clock-display {
+        font-size: 2.5em;
+        padding: 8px 15px;
+    }
+    .comp-mundial-clubes .addition-input-wrapper {
+        font-size: 0.35em;
+        margin-left: 8px;
+        padding-bottom: 3px;
+    }
+    .comp-mundial-clubes .addition-input-wrapper input {
+        width: 40px;
+        padding: 3px;
+    }
+
+    /* Ajustes gerais de responsividade para outros temas */
+    .clock-display {
+        font-size: 3em;
+        margin: 20px auto;
+    }
+    .clock-display span {
+        min-width: 50px;
+    }
+}

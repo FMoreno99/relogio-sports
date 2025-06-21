@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção de Competição</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="competition-title">Selecione a Competição</h1>
+        <div class="competitions-grid">
+            <button class="competition-btn" data-competition="champions">Champions League</button>
+            <button class="competition-btn" data-competition="libertadores">Libertadores</button>
+            <button class="competition-btn" data-competition="brasileirao">Brasileirão</button>
+            <button class="competition-btn" data-competition="copa-brasil">Copa do Brasil</button>
+            <button class="competition-btn" data-competition="mundial-clubes">Copa do Mundo de Clubes</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const competitionBtns = document.querySelectorAll('.competition-btn');
+            
+            competitionBtns.forEach(button => {
+                button.addEventListener('click', () => {
+                    const selectedCompetition = button.dataset.competition;
+                    // Redireciona diretamente para relogio.html com a competição e o modelo padrão de 120min
+                    window.location.href = `relogio.html?comp=${selectedCompetition}&model=120min`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

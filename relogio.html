@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relógio de Futebol Personalizado - Jogo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+</head>
+<body id="game-body">
+    <div class="container">
+        <div class="clock-display">
+            <span id="minutes">00</span>:<span id="seconds">00</span>
+            <span class="addition-input-wrapper hidden"> +<input type="number" id="addition-time" min="0" max="99" value="0">
+            </span>
+        </div>
+        
+        <div class="controls">
+            <button id="start-btn" class="control-btn">Iniciar</button>
+            <button id="pause-btn" class="control-btn hidden">Pausar</button>
+            <button id="reset-btn" class="control-btn hidden">Resetar</button>
+            
+            <button id="half-time-btn" class="control-btn hidden">Encerrar 1º Tempo</button>
+            <button id="start-second-half-btn" class="control-btn hidden">Iniciar 2º Tempo</button>
+            
+            <button id="end-second-half-btn" class="control-btn hidden">Encerrar 2º Tempo</button>
+            
+            <button id="start-extra-time-btn" class="control-btn hidden">Iniciar Prorrogação</button>
+            <button id="end-extra-time-btn" class="control-btn hidden">Encerrar Prorrogação</button>
+
+            <button id="end-match-btn" class="control-btn hidden">Encerrar Partida</button>
+        </div>
+        <button id="back-to-model" class="back-btn">Voltar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
