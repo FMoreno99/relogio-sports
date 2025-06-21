@@ -15,10 +15,9 @@ body {
     border-radius: 10px;
     text-align: center;
     width: 90%;
-    max-width: 600px;
+    max-width: 1200px;
 }
 
-/* Garante que todos os títulos sejam escondidos se aparecerem */
 h1, h2 {
     display: none !important;
 }
@@ -31,7 +30,6 @@ h1, h2 {
     margin-bottom: 20px;
 }
 
-/* Estilo base para todos os botões principais de navegação e controle */
 .competition-btn, .model-btn, .control-btn, .back-btn {
     padding: 12px 25px;
     font-size: 1em;
@@ -44,7 +42,6 @@ h1, h2 {
     min-width: 150px;
 }
 
-/* Cores específicas para botões de competição e modelo (padrão) */
 .competition-btn, .model-btn {
     background-color: #007bff;
     color: white;
@@ -55,7 +52,6 @@ h1, h2 {
     transform: translateY(-2px);
 }
 
-/* Estilos padrão para os botões de controle (serão sobrescritos pelas classes de competição) */
 #start-btn { background-color: #28a745; color: white; }
 #start-btn:hover { background-color: #218838; }
 
@@ -65,10 +61,10 @@ h1, h2 {
 #reset-btn { background-color: #dc3545; color: white; }
 #reset-btn:hover { background-color: #c82333; }
 
-#half-time-btn, #end-match-btn, #start-second-half-btn {
+#half-time-btn, #end-match-btn, #start-second-half-btn, #end-second-half-btn {
     background-color: #6c757d; color: white;
 }
-#half-time-btn:hover, #end-match-btn:hover, #start-second-half-btn:hover {
+#half-time-btn:hover, #end-match-btn:hover, #start-second-half-btn:hover, #end-second-half-btn:hover {
     background-color: #5a6268;
 }
 
@@ -88,42 +84,53 @@ h1, h2 {
     background-color: #5a6268;
 }
 
-/* Estilo do display do relógio padrão (para outros temas) */
 .clock-display {
-    font-size: 5em;
+    font-size: 20em;
     font-weight: bold;
     margin: 40px auto;
     color: #34495e;
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    align-items: flex-end; /* ALTERADO: Alinhamento para a base ou final dos elementos. Experimente 'center' também. */
     width: fit-content;
+    white-space: nowrap;
 }
 
 .clock-display span {
     display: inline-block;
-    min-width: 80px;
+    /* min-width: 320px; Removido ou ajustado se necessário, pode atrapalhar o flex */
 }
 
-/* Estilo para o wrapper de acréscimos (dentro do clock-display) */
+/* NOVO: Estilo para o sinal de '+' */
+.plus-sign {
+    font-size: 0.25em; /* ALTERADO: Proporção para o 20em do clock-display (20 * 0.25 = 5em) */
+    font-weight: bold;
+    margin: 0 15px; /* Espaçamento entre o tempo principal e os acréscimos */
+    color: inherit; /* Herda a cor do .clock-display */
+    /* Alinha o '+' com a base do input, pois o input tem padding e o '+' não */
+    align-self: flex-end;
+    padding-bottom: 20px; /* Ajusta o alinhamento vertical para compensar o padding do input */
+}
+
 .addition-input-wrapper {
-    font-size: 0.4em;
+    /* font-size: 0.25em; REMOVIDO: Este font-size estava tornando tudo muito pequeno.
+       O tamanho do input será controlado diretamente pelo #addition-time. */
     font-weight: normal;
-    margin-left: 10px;
+    margin-left: 10px; /* Mantido um leve espaçamento */
     display: flex;
-    align-items: flex-end;
-    padding-bottom: 10px;
+    align-items: flex-end; /* Alinha o input dentro do wrapper (se houver outros elementos) */
+    /* padding-bottom: 10px; REMOVIDO ou ajuste se sentir necessidade */
     color: inherit;
 }
 
 #addition-time {
-    width: 60px;
-    padding: 5px;
-    font-size: 1em;
+    width: 100px;
+    padding: 20px;
+    font-size: 0.25em; /* ALTERADO: Volta para 1.5em, que é um tamanho razoável para o número */
     border: 1px solid #000000;
     border-radius: 5px;
     text-align: center;
-    margin-left: 5px;
+    margin-left: 5px; /* Mantido um leve espaçamento dentro do wrapper */
     -moz-appearance: textfield;
 }
 
@@ -148,6 +155,7 @@ h1, h2 {
 .comp-champions .clock-display { color: #fff; }
 .comp-champions .control-btn, .comp-champions .back-btn { background-color: #f7d54e; color: #2c2c2c; font-weight: bold; }
 .comp-champions .control-btn:hover, .comp-champions .back-btn:hover { background-color: #e0be3a; }
+.comp-champions .plus-sign { color: white; padding-bottom: 20px; } /* Cor do '+' no tema Champions, ajusta padding */
 .comp-champions .addition-input-wrapper { color: white; }
 .comp-champions .addition-input-wrapper input { background-color: #444; color: #f7d54e; border-color: #f7d54e; }
 
@@ -160,6 +168,7 @@ h1, h2 {
 .comp-libertadores .clock-display { color: #fff; }
 .comp-libertadores .control-btn, .comp-libertadores .back-btn { background-color: #ffd700; color: #4c0000; font-weight: bold; }
 .comp-libertadores .control-btn:hover, .comp-libertadores .back-btn:hover { background-color: #e6c200; }
+.comp-libertadores .plus-sign { color: #ffd700; padding-bottom: 20px; } /* Cor do '+' no tema Libertadores, ajusta padding */
 .comp-libertadores .addition-input-wrapper { color: #eee; }
 .comp-libertadores .addition-input-wrapper input { background-color: #5a0000; color: #ffd700; border-color: #ffd700; }
 
@@ -172,6 +181,7 @@ h1, h2 {
 .comp-brasileirao .clock-display { color: #fff; }
 .comp-brasileirao .control-btn, .comp-brasileirao .back-btn { background-color: #ffff00; color: #004d00; font-weight: bold; }
 .comp-brasileirao .control-btn:hover, .comp-brasileirao .back-btn:hover { background-color: #e6e600; }
+.comp-brasileirao .plus-sign { color: #ffff00; padding-bottom: 20px; } /* Cor do '+' no tema Brasileirão, ajusta padding */
 .comp-brasileirao .addition-input-wrapper { color: #fff; }
 .comp-brasileirao .addition-input-wrapper input { background-color: #005000; color: #ffff00; border-color: #ffff00; }
 
@@ -184,6 +194,7 @@ h1, h2 {
 .comp-copa-brasil .clock-display { color: #fff; }
 .comp-copa-brasil .control-btn, .comp-copa-brasil .back-btn { background-color: #cccccc; color: #333; font-weight: bold; }
 .comp-copa-brasil .control-btn:hover, .comp-copa-brasil .back-btn:hover { background-color: #b3b3b3; }
+.comp-copa-brasil .plus-sign { color: #cccccc; padding-bottom: 20px; } /* Cor do '+' no tema Copa do Brasil, ajusta padding */
 .comp-copa-brasil .addition-input-wrapper { color: #fff; }
 .comp-copa-brasil .addition-input-wrapper input { background-color: #555; color: #cccccc; border-color: #cccccc; }
 
@@ -195,56 +206,61 @@ h1, h2 {
 }
 
 .comp-mundial-clubes .container {
-    background-color: #d5a434;;
+    background-color: #d5a434;
     border: 1px solid #555;
     padding-top: 50px;
     padding-bottom: 50px;
 }
 
-/* Esconde qualquer h1 ou h2 que possa surgir por engano */
-.comp-mundial-clubes h1,
-.comp-mundial-clubes h2 {
+h1, h2 {
     display: none !important;
 }
 
-/* --- ESTILOS ESPECÍFICOS DO CRONÔMETRO PARA O MUNDIAL --- */
 .comp-mundial-clubes .clock-display {
-    background-color: #d5a434; /* Fundo do cronômetro com a cor #d5a434 */
-    color: #000000; /* Texto do cronômetro preto */
-    font-family: 'Anton', sans-serif; /* Fonte Anton */
-    font-size: 3.5em;
+    background-color: #d5a434;
+    color: #000000;
+    font-family: 'Anton', sans-serif;
+    font-size: 14em;
     font-weight: normal;
-    padding: 10px 25px; /* Aumentado um pouco o padding para destaque */
+    padding: 40px 100px;
     border-radius: 5px;
-    margin: 0 auto; /* Centraliza horizontalmente */
+    margin: 0 auto;
     width: fit-content;
-    display: flex;
+    display: flex; /* Garante que é um flex container para o '+' e o input */
     justify-content: center;
-    align-items: baseline;
-    text-shadow: none; /* Garante que não tenha brilho no texto */
+    align-items: flex-end; /* ALTERADO: Alinha pela base */
+    text-shadow: none;
     height: fit-content;
     margin-bottom: 40px;
 }
 
-/* Acréscimos dentro do cronômetro para o Mundial */
+.comp-mundial-clubes .plus-sign { /* NOVO: Estilo do '+' para o tema Mundial */
+    font-size: 0.25em; /* Proporção para o 14em do clock-display (14 * 0.25 = 3.5em) */
+    font-weight: bold;
+    margin: 0 15px;
+    color: #000000;
+    align-self: flex-end;
+    padding-bottom: 20px; /* Ajusta o alinhamento vertical para compensar o padding do input */
+}
+
 .comp-mundial-clubes .addition-input-wrapper {
-    font-size: 0.4em;
+    /* font-size: 1.6em; REMOVIDO */
     font-weight: normal;
-    margin-left: 10px;
+    margin-left: 40px; /* Mantido espaçamento */
     display: flex;
-    align-items: flex-end;
-    padding-bottom: 5px;
+    align-items: flex-end; /* Alinha o input dentro do wrapper */
+    padding-bottom: 20px; /* Mantido */
     color: #000000;
 }
 
 .comp-mundial-clubes .addition-input-wrapper input {
-    width: 60px;
-    padding: 5px;
-    font-size: 1em;
+    width: 240px;
+    padding: 20px;
+    font-size: 1.5em; /* Mantido */
     border: 1px solid #777;
     border-radius: 5px;
     text-align: center;
-    margin-left: 5px;
+    margin-left: 20px; /* Mantido espaçamento dentro do wrapper */
     background-color: #d5a434;
     color: #000000;
     outline: none;
@@ -253,8 +269,6 @@ h1, h2 {
     border-color: #000000;
 }
 
-
-/* Botões de controle específicos para o tema Mundial de Clubes */
 .comp-mundial-clubes .control-btn,
 .comp-mundial-clubes .back-btn {
     background-color: #d5a434;
@@ -267,17 +281,16 @@ h1, h2 {
     background-color: #c0942e;
 }
 
-/* Sobrescreve botões de ação específicos se houver necessidade de manter cores padrão para um botão específico */
 .comp-mundial-clubes #start-btn { background-color: #28a745; color: white; }
 .comp-mundial-clubes #start-btn:hover { background-color: #218838; }
 .comp-mundial-clubes #pause-btn { background-color: #ffc107; color: #333; }
 .comp-mundial-clubes #pause-btn:hover { background-color: #e0a800; }
 .comp-mundial-clubes #reset-btn { background-color: #dc3545; color: white; }
 .comp-mundial-clubes #reset-btn:hover { background-color: #c82333; }
-.comp-mundial-clubes #half-time-btn, .comp-mundial-clubes #end-match-btn, .comp-mundial-clubes #start-second-half-btn {
+.comp-mundial-clubes #half-time-btn, .comp-mundial-clubes #end-match-btn, .comp-mundial-clubes #start-second-half-btn, .comp-mundial-clubes #end-second-half-btn {
     background-color: #6c757d; color: white;
 }
-.comp-mundial-clubes #half-time-btn:hover, .comp-mundial-clubes #end-match-btn:hover, .comp-mundial-clubes #start-second-half-btn:hover {
+.comp-mundial-clubes #half-time-btn:hover, .comp-mundial-clubes #end-match-btn:hover, .comp-mundial-clubes #start-second-half-btn:hover, .comp-mundial-clubes #end-second-half-btn:hover {
     background-color: #5a6268;
 }
 .comp-mundial-clubes #start-extra-time-btn, .comp-mundial-clubes #end-extra-time-btn {
@@ -295,27 +308,46 @@ h1, h2 {
         max-width: none;
     }
     
-    /* Mundial de Clubes Responsivo */
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
     .comp-mundial-clubes .clock-display {
-        font-size: 2.5em;
-        padding: 8px 15px;
+        font-size: 10em;
+        padding: 32px 60px;
+        align-items: flex-end; /* ALTERADO: Alinha pela base */
+    }
+    .comp-mundial-clubes .plus-sign { /* NOVO: Estilo do '+' para o tema Mundial responsivo */
+        font-size: 0.25em; /* Proporção para o 10em (10 * 0.25 = 2.5em) */
+        margin: 0 10px;
+        padding-bottom: 12px; /* Ajuste para responsividade */
     }
     .comp-mundial-clubes .addition-input-wrapper {
-        font-size: 0.35em;
-        margin-left: 8px;
-        padding-bottom: 3px;
+        /* font-size: 1.4em; REMOVIDO */
+        margin-left: 32px;
+        padding-bottom: 12px;
+        color: #000000;
     }
     .comp-mundial-clubes .addition-input-wrapper input {
-        width: 40px;
-        padding: 3px;
+        width: 160px;
+        padding: 12px;
+        font-size: 1.5em; /* Mantido */
+        margin-left: 16px;
     }
 
     /* Ajustes gerais de responsividade para outros temas */
     .clock-display {
-        font-size: 3em;
-        margin: 20px auto;
+        font-size: 12em;
+        margin: 40px auto;
+        align-items: flex-end; /* ALTERADO: Alinha pela base */
     }
     .clock-display span {
-        min-width: 50px;
+        min-width: 150px;
+    }
+    /* NOVO: Estilo do '+' para outros temas em telas menores */
+    .plus-sign {
+        font-size: 0.25em; /* Proporção para o 12em (12 * 0.25 = 3em) */
+        padding-bottom: 12px; /* Ajuste para responsividade */
     }
 }
