@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seleção de Competição</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção de Competição</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1 id="competition-title">Selecione a Competição</h1>
-        <div class="competitions-grid">
-            <button class="competition-btn" data-competition="champions">Champions League</button>
-            <button class="competition-btn" data-competition="libertadores">Libertadores</button>
-            <button class="competition-btn" data-competition="brasileirao">Brasileirão</button>
-            <button class="competition-btn" data-competition="copa-brasil">Copa do Brasil</button>
-            <button class="competition-btn" data-competition="mundial-clubes">Copa do Mundo de Clubes</button>
-        </div>
-    </div>
+    <div class="container">
+        <h1 id="competition-title">Selecione a Competição</h1>
+        <div class="competitions-grid">
+                        <button class="competition-btn" data-competition="champions">Champions League</button>
+            <button class="competition-btn" data-competition="libertadores">Libertadores</button>
+            <button class="competition-btn" data-competition="brasileirao">Brasileirão</button>
+            <button class="competition-btn" data-competition="copa-brasil">Copa do Brasil</button>
+            <button class="competition-btn" data-competition="mundial-clubes">Copa do Mundo de Clubes</button>
+            
+                        <button class="competition-btn" data-competition="premier-league">Premier League</button>
+            <button class="competition-btn" data-competition="la-liga">LaLiga</button>
+            <button class="competition-btn" data-competition="italiano">Campeonato Italiano</button>
+        </div>
+    </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const competitionBtns = document.querySelectorAll('.competition-btn');
-            
-            competitionBtns.forEach(button => {
-                button.addEventListener('click', () => {
-                    const selectedCompetition = button.dataset.competition;
-                    // Redireciona diretamente para relogio.html com a competição e o modelo padrão de 120min
-                    window.location.href = `relogio.html?comp=${selectedCompetition}&model=120min`;
-                });
-            });
-        });
-    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const competitionBtns = document.querySelectorAll('.competition-btn');
+            
+            competitionBtns.forEach(button => {
+                button.addEventListener('click', () => {
+                    const selectedCompetition = button.dataset.competition;
+                    
+                    let model = '120min'; // Padrão com prorrogação
+                    
+                    // Usa o modelo de 90min para as competições de liga
+                    if (selectedCompetition === 'premier-league' || selectedCompetition === 'la-liga' || selectedCompetition === 'italiano' || selectedCompetition === 'brasileirao') {
+                        model = '90min';
+                    }
+                    
+                    window.location.href = `relogio.html?comp=${selectedCompetition}&model=${model}`;
+                });
+            });
+        });
+    </script>
 </body>
 </html>
