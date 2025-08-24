@@ -174,16 +174,16 @@ h1, h2 {
 
 /* Brasileirão */
 .comp-brasileirao {
-    background-image: linear-gradient(to bottom, #004d00, #008000);
+    background-image: linear-gradient(to bottom, #001966, #0532ba);
     color: #fff;
 }
-.comp-brasileirao .container { background-color: #006000; }
+.comp-brasileirao .container { background-color: #001966; }
 .comp-brasileirao .clock-display { color: #fff; }
-.comp-brasileirao .control-btn, .comp-brasileirao .back-btn { background-color: #ffff00; color: #004d00; font-weight: bold; }
+.comp-brasileirao .control-btn, .comp-brasileirao .back-btn { background-color: #ffff00; color: #001966; font-weight: bold; }
 .comp-brasileirao .control-btn:hover, .comp-brasileirao .back-btn:hover { background-color: #e6e600; }
 .comp-brasileirao .plus-sign { color: #ffff00; padding-bottom: 20px; } /* Cor do '+' no tema Brasileirão, ajusta padding */
 .comp-brasileirao .addition-input-wrapper { color: #fff; }
-.comp-brasileirao .addition-input-wrapper input { background-color: #005000; color: #ffff00; border-color: #ffff00; }
+.comp-brasileirao .addition-input-wrapper input { background-color: #001966; color: #ffff00; border-color: #ffff00; }
 
 /* Copa do Brasil */
 .comp-copa-brasil {
