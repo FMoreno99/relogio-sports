@@ -175,10 +175,12 @@ h1, h2 {
 .comp-brasileirao {
     background-image: linear-gradient(to bottom, #001966, #0532ba);
     color: #fff;
+    font-family: 'Helvetica Neue LT Std', Helvetica, Arial, sans-serif;
 }
 .comp-brasileirao .container {
     background-image: linear-gradient(to bottom, #001966, #0532ba);
     color: #fff; /* Adicionando cor de texto para contraste */
+    font-family: 'Helvetica Neue LT Std', Helvetica, Arial, sans-serif;
 }
 .comp-brasileirao .clock-display { color: #fff; }
 .comp-brasileirao .control-btn, .comp-brasileirao .back-btn { background-color: #ffff00; color: #001966; font-weight: bold; }
@@ -373,6 +375,49 @@ h1, h2 {
         margin-left: 16px;
     }
 
+    /* Paulistão (NOVO) */
+.comp-paulistao {
+    background-image: linear-gradient(to right, #fc4035, #fc4035);
+    color: white;
+}
+
+.comp-paulistao .container {
+    background-image: linear-gradient(to right, #fc4035, #fc4035);
+    color: white;
+}
+
+.comp-paulistao .clock-display {
+    color: #fff;
+    /* Aplicando a fonte específica solicitada */
+    font-family: 'Cervino Black Neue', 'Arial Black', sans-serif;
+    text-transform: uppercase;
+}
+
+.comp-paulistao .control-btn, .comp-paulistao .back-btn {
+    background-color: #ffffff;
+    color: #fc4035;
+    font-weight: bold;
+    font-family: 'Cervino Black Neue', sans-serif;
+}
+
+.comp-paulistao .control-btn:hover, .comp-paulistao .back-btn:hover {
+    background-color: #e2e2e2;
+}
+
+.comp-paulistao .plus-sign {
+    color: #fff;
+}
+
+.comp-paulistao .addition-input-wrapper {
+    color: white;
+}
+
+.comp-paulistao .addition-input-wrapper input {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border: 2px solid #fff;
+}
+
     /* Ajustes gerais de responsividade para outros temas */
     .clock-display {
         font-size: 12em;
@@ -386,4 +431,6 @@ h1, h2 {
         font-size: 0.25em;
         padding-bottom: 12px;
     }
+
+
 }
