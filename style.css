@@ -340,41 +340,6 @@ h1, h2 {
 .comp-italiano .plus-sign { color: #00ff00; padding-bottom: 20px; }
 .comp-italiano .addition-input-wrapper { color: white; }
 .comp-italiano .addition-input-wrapper input { background-color: #1a0022; color: #fff; border-color: #00ff00; }
-
-/* --- Responsividade para telas menores --- */
-@media (max-width: 768px) {
-    .competition-btn, .model-btn {
-        flex-basis: 100%;
-        max-width: none;
-    }
-    
-    .container {
-        width: 95%;
-        padding: 20px;
-    }
-
-    .comp-mundial-clubes .clock-display {
-        font-size: 10em;
-        padding: 32px 60px;
-        align-items: flex-end;
-    }
-    .comp-mundial-clubes .plus-sign {
-        font-size: 0.25em;
-        margin: 0 10px;
-        padding-bottom: 12px;
-    }
-    .comp-mundial-clubes .addition-input-wrapper {
-        margin-left: 32px;
-        padding-bottom: 12px;
-        color: #000000;
-    }
-    .comp-mundial-clubes .addition-input-wrapper input {
-        width: 160px;
-        padding: 12px;
-        font-size: 1.5em;
-        margin-left: 16px;
-    }
-
     /* Paulistão (NOVO) */
 .comp-paulistao {
     background-image: linear-gradient(to right, #fc4035, #fc4035);
@@ -417,6 +382,40 @@ h1, h2 {
     color: #fff;
     border: 2px solid #fff;
 }
+
+/* --- Responsividade para telas menores --- */
+@media (max-width: 768px) {
+    .competition-btn, .model-btn {
+        flex-basis: 100%;
+        max-width: none;
+    }
+    
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .comp-mundial-clubes .clock-display {
+        font-size: 10em;
+        padding: 32px 60px;
+        align-items: flex-end;
+    }
+    .comp-mundial-clubes .plus-sign {
+        font-size: 0.25em;
+        margin: 0 10px;
+        padding-bottom: 12px;
+    }
+    .comp-mundial-clubes .addition-input-wrapper {
+        margin-left: 32px;
+        padding-bottom: 12px;
+        color: #000000;
+    }
+    .comp-mundial-clubes .addition-input-wrapper input {
+        width: 160px;
+        padding: 12px;
+        font-size: 1.5em;
+        margin-left: 16px;
+    }
 
     /* Ajustes gerais de responsividade para outros temas */
     .clock-display {
