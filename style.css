@@ -171,23 +171,23 @@ h1, h2 {
 .comp-libertadores .addition-input-wrapper { color: #eee; }
 .comp-libertadores .addition-input-wrapper input { background-color: #5a0000; color: #ffd700; border-color: #ffd700; }
 
-/* Brasileirão (ATUALIZADO COM NOVAS CORES) */
+/* Brasileirão (ATUALIZADO COM FONTE PRETA E GRADIENTE ASSIMÉTRICO) */
 .comp-brasileirao {
-    background-image: linear-gradient(to bottom, #8ef60a, #fff61d);
-    color: #001966;
+    background-image: linear-gradient(to bottom, #8ef60a 25%, #fff61d 100%);
+    color: #000000;
     font-family: 'Helvetica Neue LT Std', Helvetica, Arial, sans-serif;
 }
 .comp-brasileirao .container {
-    background-image: linear-gradient(to bottom, #8ef60a, #fff61d);
-    color: #001966;
+    background-image: linear-gradient(to bottom, #8ef60a 25%, #fff61d 100%);
+    color: #000000;
     font-family: 'Helvetica Neue LT Std', Helvetica, Arial, sans-serif;
 }
-.comp-brasileirao .clock-display { color: #001966; }
-.comp-brasileirao .control-btn, .comp-brasileirao .back-btn { background-color: #001966; color: #fff61d; font-weight: bold; }
-.comp-brasileirao .control-btn:hover, .comp-brasileirao .back-btn:hover { background-color: #001040; }
-.comp-brasileirao .plus-sign { color: #001966; padding-bottom: 20px; }
-.comp-brasileirao .addition-input-wrapper { color: #001966; }
-.comp-brasileirao .addition-input-wrapper input { background-color: #001966; color: #fff61d; border-color: #001966; }
+.comp-brasileirao .clock-display { color: #000000; }
+.comp-brasileirao .control-btn, .comp-brasileirao .back-btn { background-color: #000000; color: #fff61d; font-weight: bold; }
+.comp-brasileirao .control-btn:hover, .comp-brasileirao .back-btn:hover { background-color: #333333; }
+.comp-brasileirao .plus-sign { color: #000000; padding-bottom: 20px; }
+.comp-brasileirao .addition-input-wrapper { color: #000000; }
+.comp-brasileirao .addition-input-wrapper input { background-color: #000000; color: #fff61d; border-color: #000000; }
 
 /* Copa do Brasil (ATUALIZADO) */
 .comp-copa-brasil {
