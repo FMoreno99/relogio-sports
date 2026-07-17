@@ -146,7 +146,7 @@ h1, h2 {
 }
 .comp-champions .container { 
     background-image: linear-gradient(to right, #000bad, #0a0650);
-    color: white; /* Adicionando cor de texto para contraste */
+    color: white;
 }
 .comp-champions .clock-display { color: #fff; }
 .comp-champions .control-btn, .comp-champions .back-btn { background-color: #f7d54e; color: #2c2c2c; font-weight: bold; }
@@ -162,7 +162,7 @@ h1, h2 {
 }
 .comp-libertadores .container {
     background-image: linear-gradient(to right, #000000, #665a25);
-    color: #eee; /* Adicionando cor de texto para contraste */
+    color: #eee;
 }
 .comp-libertadores .clock-display { color: #fff; }
 .comp-libertadores .control-btn, .comp-libertadores .back-btn { background-color: #ffd700; color: #4c0000; font-weight: bold; }
@@ -171,23 +171,23 @@ h1, h2 {
 .comp-libertadores .addition-input-wrapper { color: #eee; }
 .comp-libertadores .addition-input-wrapper input { background-color: #5a0000; color: #ffd700; border-color: #ffd700; }
 
-/* Brasileirão (ATUALIZADO) */
+/* Brasileirão (ATUALIZADO COM NOVAS CORES) */
 .comp-brasileirao {
-    background-image: linear-gradient(to bottom, #001966, #0532ba);
-    color: #fff;
+    background-image: linear-gradient(to bottom, #8ef60a, #fff61d);
+    color: #001966;
     font-family: 'Helvetica Neue LT Std', Helvetica, Arial, sans-serif;
 }
 .comp-brasileirao .container {
-    background-image: linear-gradient(to bottom, #001966, #0532ba);
-    color: #fff; /* Adicionando cor de texto para contraste */
+    background-image: linear-gradient(to bottom, #8ef60a, #fff61d);
+    color: #001966;
     font-family: 'Helvetica Neue LT Std', Helvetica, Arial, sans-serif;
 }
-.comp-brasileirao .clock-display { color: #fff; }
-.comp-brasileirao .control-btn, .comp-brasileirao .back-btn { background-color: #ffff00; color: #001966; font-weight: bold; }
-.comp-brasileirao .control-btn:hover, .comp-brasileirao .back-btn:hover { background-color: #e6e600; }
-.comp-brasileirao .plus-sign { color: #ffff00; padding-bottom: 20px; }
-.comp-brasileirao .addition-input-wrapper { color: #fff; }
-.comp-brasileirao .addition-input-wrapper input { background-color: #001966; color: #ffff00; border-color: #ffff00; }
+.comp-brasileirao .clock-display { color: #001966; }
+.comp-brasileirao .control-btn, .comp-brasileirao .back-btn { background-color: #001966; color: #fff61d; font-weight: bold; }
+.comp-brasileirao .control-btn:hover, .comp-brasileirao .back-btn:hover { background-color: #001040; }
+.comp-brasileirao .plus-sign { color: #001966; padding-bottom: 20px; }
+.comp-brasileirao .addition-input-wrapper { color: #001966; }
+.comp-brasileirao .addition-input-wrapper input { background-color: #001966; color: #fff61d; border-color: #001966; }
 
 /* Copa do Brasil (ATUALIZADO) */
 .comp-copa-brasil {
@@ -196,7 +196,7 @@ h1, h2 {
 }
 .comp-copa-brasil .container {
     background-image: linear-gradient(to top, #333333, #666666);
-    color: #fff; /* Adicionando cor de texto para contraste */
+    color: #fff;
 }
 .comp-copa-brasil .clock-display { color: #fff; }
 .comp-copa-brasil .control-btn, .comp-copa-brasil .back-btn { background-color: #cccccc; color: #333; font-weight: bold; }
@@ -205,7 +205,7 @@ h1, h2 {
 .comp-copa-brasil .addition-input-wrapper { color: #fff; }
 .comp-copa-brasil .addition-input-wrapper input { background-color: #555; color: #cccccc; border-color: #cccccc; }
 
-/* Copa do Mundo de Clubes - FOCO PRINCIPAL */
+/* Copa do Mundo de Clubes */
 .comp-mundial-clubes {
     background-color: #333;
     color: #fff;
@@ -291,8 +291,6 @@ h1, h2 {
     background-color: #138496;
 }
 
-/* --- Estilos para as novas competições --- */
-
 /* Premier League (ATUALIZADO) */
 .comp-premier-league {
     background-image: linear-gradient(to right, #63057b, #1f0160);
@@ -300,7 +298,7 @@ h1, h2 {
 }
 .comp-premier-league .container {
     background-image: linear-gradient(to right, #63057b, #1f0160);
-    color: white; /* Adicionando cor de texto para contraste */
+    color: white;
 }
 .comp-premier-league .clock-display { color: #fff; }
 .comp-premier-league .control-btn, .comp-premier-league .back-btn { background-color: #ff0000; color: white; font-weight: bold; }
@@ -316,7 +314,7 @@ h1, h2 {
 }
 .comp-la-liga .container {
     background-image: linear-gradient(to right, #ff0000, #ffc400);
-    color: #333; /* Adicionando cor de texto para contraste */
+    color: #333;
 }
 .comp-la-liga .clock-display { color: #fff; }
 .comp-la-liga .control-btn, .comp-la-liga .back-btn { background-color: #ffc400; color: #ff0000; font-weight: bold; }
@@ -332,7 +330,7 @@ h1, h2 {
 }
 .comp-italiano .container {
     background-image: linear-gradient(to right, #360044, #060169);
-    color: white; /* Adicionando cor de texto para contraste */
+    color: white;
 }
 .comp-italiano .clock-display { color: #fff; }
 .comp-italiano .control-btn, .comp-italiano .back-btn { background-color: #00ff00; color: #360044; font-weight: bold; }
@@ -340,43 +338,36 @@ h1, h2 {
 .comp-italiano .plus-sign { color: #00ff00; padding-bottom: 20px; }
 .comp-italiano .addition-input-wrapper { color: white; }
 .comp-italiano .addition-input-wrapper input { background-color: #1a0022; color: #fff; border-color: #00ff00; }
-    /* Paulistão (NOVO) */
+
+/* Paulistão (NOVO) */
 .comp-paulistao {
     background-image: linear-gradient(to right, #fc4035, #fc4035);
     color: white;
 }
-
 .comp-paulistao .container {
     background-image: linear-gradient(to right, #fc4035, #fc4035);
     color: white;
 }
-
 .comp-paulistao .clock-display {
     color: #fff;
-    /* Aplicando a fonte específica solicitada */
     font-family: 'Cervino Black Neue', 'Arial Black', sans-serif;
     text-transform: uppercase;
 }
-
 .comp-paulistao .control-btn, .comp-paulistao .back-btn {
     background-color: #ffffff;
     color: #fc4035;
     font-weight: bold;
     font-family: 'Cervino Black Neue', sans-serif;
 }
-
 .comp-paulistao .control-btn:hover, .comp-paulistao .back-btn:hover {
     background-color: #e2e2e2;
 }
-
 .comp-paulistao .plus-sign {
     color: #fff;
 }
-
 .comp-paulistao .addition-input-wrapper {
     color: white;
 }
-
 .comp-paulistao .addition-input-wrapper input {
     background-color: rgba(255, 255, 255, 0.2);
     color: #fff;
@@ -430,6 +421,4 @@ h1, h2 {
         font-size: 0.25em;
         padding-bottom: 12px;
     }
-
-
 }
